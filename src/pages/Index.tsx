@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import ArticleCats from "./ArticleCats";
+import ArticleGrooming from "./ArticleGrooming";
+import ArticlePurring from "./ArticlePurring";
 
 const NAV_ITEMS = ["Главная", "Каталог", "Галерея", "Статьи", "Контакты"];
 
@@ -119,12 +122,27 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState("Главная");
   const [selectedBreed, setSelectedBreed] = useState<Breed | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeArticle, setActiveArticle] = useState<number | null>(null);
 
   const scrollTo = (section: string) => {
     setActiveSection(section);
     setMenuOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const openArticle = (id: number) => {
+    setActiveArticle(id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const closeArticle = () => {
+    setActiveArticle(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  if (activeArticle === 1) return <ArticleCats onBack={closeArticle} />;
+  if (activeArticle === 2) return <ArticleGrooming onBack={closeArticle} />;
+  if (activeArticle === 3) return <ArticlePurring onBack={closeArticle} />;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -370,6 +388,7 @@ const Index = () => {
               {ARTICLES.map((article, i) => (
                 <article
                   key={article.id}
+                  onClick={() => openArticle(article.id)}
                   className={`py-10 group cursor-pointer animate-fade-in opacity-0 stagger-${i + 1}`}
                 >
                   <div className="flex items-center gap-4 mb-4">
@@ -384,8 +403,8 @@ const Index = () => {
                   <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-2xl mb-6">
                     {article.excerpt}
                   </p>
-                  <span className="font-body text-xs tracking-widest uppercase border-b border-foreground pb-0.5">
-                    Читать далее
+                  <span className="font-body text-xs tracking-widest uppercase border-b border-foreground pb-0.5 flex items-center gap-1.5 w-fit">
+                    Читать далее <Icon name="ArrowRight" size={12} />
                   </span>
                 </article>
               ))}
