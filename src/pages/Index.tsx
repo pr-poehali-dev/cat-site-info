@@ -85,8 +85,8 @@ const GALLERY = [
   { id: 4, src: "https://cdn.poehali.dev/projects/ed4dcf6a-5c54-43af-947e-70898ae71085/files/7bfdd229-22fb-4ace-803d-4e30a13210e9.jpg", alt: "Британская кошка" },
   { id: 5, src: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500&q=80", alt: "Котёнок" },
   { id: 6, src: "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=500&q=80", alt: "Чёрная кошка" },
-  { id: 7, src: "https://images.unsplash.com/photo-1511044568932-338ceba04548?w=500&q=80", alt: "Персидская кошка" },
-  { id: 8, src: "https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=500&q=80", alt: "Кошка у окна" },
+  { id: 7, src: "https://cdn.poehali.dev/projects/ed4dcf6a-5c54-43af-947e-70898ae71085/files/288a55ea-fe0f-4a54-b700-cfc68d32203a.jpg", alt: "Персидская кошка" },
+  { id: 8, src: "https://cdn.poehali.dev/projects/ed4dcf6a-5c54-43af-947e-70898ae71085/files/d32f2455-5b4b-4163-8965-078a9d83838c.jpg", alt: "Кошка у окна" },
 ];
 
 const ARTICLES = [
